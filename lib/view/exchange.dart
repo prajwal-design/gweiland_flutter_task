@@ -157,7 +157,7 @@ class _ExchangeState extends State<Exchange> {
             itemCount: 20,
             itemBuilder: (context, index) {
               return snap.isLoading
-                  ? const Center(child: Text("Loading"))
+                  ? const Center(child: Text(""))
                   : snap.isLoading == false && snap.isNoData
                       ? Center(child: Text("No Data Found"))
                       : snap.isLoading == false && snap.isError

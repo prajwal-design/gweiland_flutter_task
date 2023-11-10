@@ -5,6 +5,7 @@ import 'package:gweiland_flutter_task/providers/currency_provider.dart';
 import 'package:provider/provider.dart';
 
 import '../../providers/logo_provider.dart';
+import '../../view/currency_details.dart';
 
 class CurrencyListItem extends StatefulWidget {
   final Currency? currency;
@@ -34,7 +35,7 @@ class _CurrencyListItemState extends State<CurrencyListItem> {
       children: [
         ListTile(
           onTap: (){
-
+            Navigator.push(context, MaterialPageRoute(builder: (context) => CurrencyDetails(),));
           },
           contentPadding: EdgeInsets.zero,
           leading: circleAvatar(widget.index!),
