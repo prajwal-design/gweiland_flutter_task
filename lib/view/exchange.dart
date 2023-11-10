@@ -34,6 +34,7 @@ class _ExchangeState extends State<Exchange> {
         child: SingleChildScrollView(
           child: Column(
             children: [
+              SizedBox(height: width*0.04,),
               Row(
                 children: [
                   const Text(

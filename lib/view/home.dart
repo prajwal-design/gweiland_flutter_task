@@ -4,10 +4,7 @@ import 'package:gweiland_flutter_task/utils/colors.dart';
 import 'package:gweiland_flutter_task/view/wallet.dart';
 import 'package:provider/provider.dart';
 
-import '../providers/currency_provider.dart';
 import '../providers/logo_provider.dart';
-import '../res/components/currency_cards.dart';
-import '../res/components/currency_list_item.dart';
 import 'e_shope.dart';
 import 'exchange.dart';
 import 'launchpads.dart';

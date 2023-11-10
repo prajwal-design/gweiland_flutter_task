@@ -1,10 +1,14 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gweiland_flutter_task/providers/currency_provider.dart';
 import 'package:gweiland_flutter_task/providers/logo_provider.dart';
 import 'package:gweiland_flutter_task/view/home.dart';
 import 'package:provider/provider.dart';
+
+
+
+///This app is only for demo purpose only.
+/// only development mode testing is done any unexpected errors are not handled
 
 void main(){
   runApp(GweilandFlutter());
@@ -20,10 +24,10 @@ class GweilandFlutter extends StatefulWidget{
 class _GweilandFlutterState extends State<GweilandFlutter> {
 
   @override
-  void initState() {
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: [SystemUiOverlay.bottom]);
-    super.initState();
-  }
+  // void initState() {
+  //   SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: [SystemUiOverlay.bottom]);
+  //   super.initState();
+  // }
   Widget build(BuildContext context) {
    return MaterialApp(
      debugShowCheckedModeBanner: false,
