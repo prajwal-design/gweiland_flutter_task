@@ -33,7 +33,9 @@ class _CurrencyListItemState extends State<CurrencyListItem> {
     return Stack(
       children: [
         ListTile(
-          onTap: (){},
+          onTap: (){
+
+          },
           contentPadding: EdgeInsets.zero,
           leading: circleAvatar(widget.index!),
           title: Text(

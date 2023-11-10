@@ -1,13 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gweiland_flutter_task/utils/colors.dart';
+import 'package:gweiland_flutter_task/view/wallet.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/currency_provider.dart';
 import '../providers/logo_provider.dart';
 import '../res/components/currency_cards.dart';
 import '../res/components/currency_list_item.dart';
+import 'e_shope.dart';
 import 'exchange.dart';
+import 'launchpads.dart';
 
 
 class HomeScreen extends StatefulWidget {
@@ -22,7 +25,6 @@ class HomeScreen extends StatefulWidget {
 class HomeScreenState extends State<HomeScreen> {
 
   LogoProvider? logoProvider;
-  var now = DateTime.now();
   int _selectedIndex = 1;
 
   @override
@@ -37,7 +39,8 @@ class HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
-        body:_selectedIndex==1?const Exchange():SizedBox(),
+        body:
+        _selectedIndex==0? const Eshop() : _selectedIndex == 1? const Exchange():_selectedIndex==2? const LaunchPads():_selectedIndex==3?const Wallet():const SizedBox(),
         bottomNavigationBar: bottomNavBar(width));
   }
 
@@ -127,7 +130,7 @@ class HomeScreenState extends State<HomeScreen> {
                         padding: const EdgeInsets.only(bottom: 1, left: 5),
                         child: IconButton(
                           icon: Icon(Icons.rocket_launch_outlined,
-                              color: _selectedIndex==3?CustomColors.isActiveColor:CustomColors.searchIconColor),
+                              color: _selectedIndex==2?CustomColors.isActiveColor:CustomColors.searchIconColor),
                           onPressed: () => _onItemTapped(2),
                         ),
                       ),
@@ -135,7 +138,7 @@ class HomeScreenState extends State<HomeScreen> {
                         padding: const EdgeInsets.only(bottom: 1, left: 5),
                         child: Text(
                           "Launchpads",
-                          style: TextStyle(color: _selectedIndex==3?CustomColors.isActiveColor:CustomColors.searchIconColor),
+                          style: TextStyle(color: _selectedIndex==2?CustomColors.isActiveColor:CustomColors.searchIconColor),
                         ),
                       )
                     ],
@@ -149,7 +152,7 @@ class HomeScreenState extends State<HomeScreen> {
                             bottom: 1, left: 5, right: 10),
                         child: IconButton(
                           icon:  Icon(Icons.wallet_travel_outlined,
-                              color: _selectedIndex==4?CustomColors.isActiveColor:CustomColors.searchIconColor),
+                              color: _selectedIndex==3?CustomColors.isActiveColor:CustomColors.searchIconColor),
                           onPressed: () => _onItemTapped(3),
                         ),
                       ),
@@ -157,7 +160,7 @@ class HomeScreenState extends State<HomeScreen> {
                         padding: const EdgeInsets.only(bottom: 1, left: 5, right: 10),
                         child: Text(
                           "Wallet",
-                          style: TextStyle(color: _selectedIndex==4?CustomColors.isActiveColor:CustomColors.searchIconColor),
+                          style: TextStyle(color: _selectedIndex==3?CustomColors.isActiveColor:CustomColors.searchIconColor),
                         ),
                       )
                     ],
